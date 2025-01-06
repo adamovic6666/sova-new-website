@@ -4,6 +4,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GSAP Fullscreen Loader</title>
     <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <!-- Preload Sections -->
@@ -17,17 +22,113 @@
     </div>
     <div class="section image-section" id="section2"></div>
     <div class="section typing" id="section3">
-      <span id="typing-text">Communication made visible...</span>
+      <span id="typing-text">Communication made visible</span>
     </div>
-    <!-- <div class="section gray" id="section4">
-      <div id="who">Who we are?</div>
-    </div> -->
+    <div class="section gray" id="section4">
+      <div id="who">Who we are <span class="question-mark">?</span></div>
+    </div>
 
     <!-- Main Scrollable Sections -->
-    <!-- <div class="main-section">Main Section 1</div>
-    <div class="main-section">Main Section 2</div>
-    <div class="main-section">Main Section 3</div>
-    <div class="main-section">Main Section 4</div> -->
+    <main class="main-section">
+      <section id="about-us" class="inner-section">
+        <p>
+          We are a dynamic and innovative full-service design team, specializing
+          in delivering cost-effective solutions across all aspects of visual
+          communication. Our experience spans collaborations with some of the
+          world’s largest corporations as well as local entrepreneurial
+          start-ups. Regardless of scale, we pride ourselves on providing the
+          same exceptional level of service, ensuring reliable delivery - on
+          time and within budget
+        </p>
+      </section>
+      <section id="our-work-title" class="inner-section">
+        <h2 class="title">our work</h2>
+      </section>
+      <section id="projects">
+        <div class="projects-wrapper inner-section">
+          <h2 class="title left">identity</h2>
+          <div class="cards">
+            <div class="image"></div>
+            <div class="image"></div>
+            <div class="image"></div>
+          </div>
+        </div>
+        <div class="projects-wrapper inner-section">
+          <h2 class="title right">print</h2>
+          <div class="cards">
+            <div class="image"></div>
+            <div class="image"></div>
+            <div class="image"></div>
+          </div>
+          <button class="see-more">see more</button>
+          <dialog class="dialog">
+            <button class="close-btn">close</button>
+            <div class="swiper">
+              <div class="dialog-content swiper-wrapper">
+                <div class="dialog-content-wrapper swiper-slide">
+                  <div class="dialog-text">
+                    <h3>asdasdasd</h3>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Perspiciatis rerum non alias sapiente! Praesentium earum
+                      quaerat modi odit enim obcaecati id nostrum dolorum
+                      tempore delectus in deleniti eos maxime totam tempora
+                      excepturi quibusdam necessitatibus consequuntur eveniet,
+                      aut fuga rerum? Magnam eius velit repudiandae harum
+                      aliquid eveniet tenetur ut omnis corporis!
+                    </p>
+                  </div>
+                  <div class="dialog-content-image"></div>
+                </div>
+                <div class="dialog-content-wrapper swiper-slide">
+                  <!-- <button class="close-btn">close</button> -->
+
+                  <div class="dialog-text">
+                    <h3>asdasdasd</h3>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Perspiciatis rerum non alias sapiente! Praesentium earum
+                      quaerat modi odit enim obcaecati id nostrum dolorum
+                      tempore delectus in deleniti eos maxime totam tempora
+                      excepturi quibusdam necessitatibus consequuntur eveniet,
+                      aut fuga rerum? Magnam eius velit repudiandae harum
+                      aliquid eveniet tenetur ut omnis corporis!
+                    </p>
+                  </div>
+                  <div class="dialog-content-image"></div>
+                </div>
+                <div class="dialog-content-wrapper swiper-slide">
+                  <!-- <button class="close-btn">close</button> -->
+
+                  <div class="dialog-text">
+                    <h3>asdasdasd</h3>
+                    <p>
+                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                      Perspiciatis rerum non alias sapiente! Praesentium earum
+                      quaerat modi odit enim obcaecati id nostrum dolorum
+                      tempore delectus in deleniti eos maxime totam tempora
+                      excepturi quibusdam necessitatibus consequuntur eveniet,
+                      aut fuga rerum? Magnam eius velit repudiandae harum
+                      aliquid eveniet tenetur ut omnis corporis!
+                    </p>
+                  </div>
+                  <div class="dialog-content-image"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </dialog>
+        </div>
+        <div class="projects-wrapper inner-section">
+          <h2 class="title left">packaging</h2>
+          <div class="cards">
+            <div class="image"></div>
+            <div class="image"></div>
+            <div class="image"></div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>

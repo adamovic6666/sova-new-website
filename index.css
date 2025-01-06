@@ -7,9 +7,10 @@ body {
   font-family: Arial, sans-serif;
   overflow: hidden;
 }
+.main-section,
 .section {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,12 +19,12 @@ body {
   left: 0;
   opacity: 0;
 }
-
 .black {
   background-color: #000;
   color: #fff;
   font-size: 4rem;
   font-weight: bold;
+  opacity: 1;
 }
 .image-section {
   background: url("https://via.placeholder.com/1920x1080") no-repeat center
@@ -32,7 +33,6 @@ body {
   background-size: cover;
 }
 .typing {
-  background-color: #000;
   color: #fff;
   font-size: 2rem;
 }
@@ -41,22 +41,151 @@ body {
   font-size: 3rem;
   font-weight: bold;
 }
-.main-section {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-}
-.main-section:nth-child(odd) {
-  background-color: #f4f4f4;
-}
-.main-section:nth-child(even) {
-  background-color: #ddd;
-}
-
 #letters {
   display: flex;
   gap: 16px;
+}
+
+#letters span {
+  opacity: 0;
+  display: block;
+}
+
+.question-mark {
+  display: inline-block;
+}
+
+.main-section {
+  flex-direction: column;
+  height: auto;
+}
+
+.main-section section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  height: 100vh;
+}
+
+.inner-section {
+  max-width: 800px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.title.left {
+  margin-right: auto;
+}
+
+.title.right {
+  margin-left: auto;
+}
+
+.projects-wrapper {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+}
+
+.cards .image {
+  width: 100%;
+  height: 200px;
+  background: url("https://via.placeholder.com/200x200") no-repeat center
+    center/cover;
+  background-position: center;
+  background-size: cover;
+}
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.dialog.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-content-wrapper {
+  display: flex;
+  height: 100%;
+  position: relative;
+}
+
+.dialog-text {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 16px;
+}
+
+button {
+  cursor: pointer;
+}
+
+.dialog-content-image {
+  width: 60%;
+  height: 100%;
+  background: url("https://via.placeholder.com/1920x1080") no-repeat center
+    center/cover;
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide {
+  display: flex !important;
+}
+
+.close-btn {
+  position: absolute;
+
+  z-index: 999;
+  top: 16px;
+  right: 16px;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.swiper-pagination {
+  transition: 0.3s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
