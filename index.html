@@ -9,6 +9,10 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"
+    />
   </head>
   <body>
     <!-- Preload Sections -->
@@ -94,6 +98,7 @@
                       aut fuga rerum? Magnam eius velit repudiandae harum
                       aliquid eveniet tenetur ut omnis corporis!
                     </p>
+                    <button class="see-more-images">See more images</button>
                   </div>
                   <div class="dialog-content-image"></div>
                 </div>
@@ -130,8 +135,61 @@
       </section>
     </main>
 
+    <!-- LIGHTGALLERY  -->
+    <div id="lightgallery" class="gallery" style="display: none">
+      <a href="https://via.placeholder.com/800x600" data-lg-size="800-600">
+        <img src="https://via.placeholder.com/150x100" alt="Image 1" />
+      </a>
+      <a
+        href="https://via.placeholder.com/800x600/ff7f7f"
+        data-lg-size="800-600"
+      >
+        <img src="https://via.placeholder.com/150x100/ff7f7f" alt="Image 2" />
+      </a>
+      <a
+        href="https://via.placeholder.com/800x600/7f7fff"
+        data-lg-size="800-600"
+      >
+        <img src="https://via.placeholder.com/150x100/7f7fff" alt="Image 3" />
+      </a>
+      <a
+        href="https://via.placeholder.com/800x600/7fff7f"
+        data-lg-size="800-600"
+      >
+        <img src="https://via.placeholder.com/150x100/7fff7f" alt="Image 4" />
+      </a>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="index.js"></script>
+    <!-- LightGallery JS -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script>
+    <!-- Plugins (optional) -->
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/plugins/zoom/lg-zoom.min.js"></script>
+    <script>
+      // Initialize LightGallery
+      const lightGalleryInstance = lightGallery(
+        document.getElementById("lightgallery"),
+        {
+          plugins: [lgZoom, lgThumbnail],
+          speed: 500,
+          thumbnail: true,
+        }
+      );
+
+      // Open LightGallery when "see-more-images" button is clicked
+      const seeMoreImagesButton = document.querySelector(".see-more-images");
+      seeMoreImagesButton.addEventListener("click", () => {
+        lightGalleryInstance.openGallery();
+        document.querySelector(".dialog").close();
+      });
+
+      const lgCloseButton = document.querySelector(".lg-close");
+      lgCloseButton.addEventListener("click", () => {
+        document.body.style.overflow = "auto";
+      });
+    </script>
   </body>
 </html>

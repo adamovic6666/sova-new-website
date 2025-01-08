@@ -5,6 +5,7 @@
 }
 body {
   font-family: Arial, sans-serif;
+  padding-bottom: 240px;
   overflow: hidden;
 }
 .main-section,
@@ -77,6 +78,7 @@ body {
 .title {
   font-size: 3rem;
   font-weight: bold;
+  /* opacity: 0; */
 }
 
 .title.left {
@@ -115,8 +117,8 @@ dialog {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90%;
-  height: 90%;
+  width: 80dvw;
+  height: 80dvh;
   z-index: 999;
   animation: fadeIn 0.3s ease-in;
 }
@@ -127,9 +129,9 @@ dialog {
   align-items: center;
 }
 
-::backdrop {
+/* ::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
-}
+} */
 
 .dialog-content-wrapper {
   display: flex;
@@ -165,6 +167,10 @@ button {
 
 .swiper-slide {
   display: flex !important;
+}
+
+#about-us {
+  opacity: 0;
 }
 
 .close-btn {

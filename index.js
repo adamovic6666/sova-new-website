@@ -1,3 +1,4 @@
+gsap.registerPlugin(ScrollTrigger);
 const timeline = gsap.timeline();
 const letters = document.querySelectorAll("#letters span");
 const typingText = document.querySelector("#typing-text");
@@ -145,6 +146,11 @@ timeline
     },
   });
 
+timeline.to("#about-us", {
+  opacity: 1,
+  duration: 0.5,
+});
+
 const seeMoreBtns = Array.from(document.querySelectorAll(".see-more"));
 seeMoreBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -167,6 +173,7 @@ const swiper = new Swiper(".swiper", {
     el: ".swiper-pagination",
     clickable: true,
   },
+  speed: 700,
   mousewheel: true, // Enable mousewheel control
   on: {
     slideChange: function () {
@@ -178,4 +185,48 @@ const swiper = new Swiper(".swiper", {
       }px`;
     },
   },
+});
+
+const titles = Array.from(document.querySelectorAll(".title"));
+console.log(titles);
+titles.forEach((title) => {
+  console.log(title.classList);
+  const transform = title.classList.contains("left")
+    ? { x: -20 }
+    : title.classList.contains("right")
+    ? { x: 20 }
+    : { y: 0 };
+
+  gsap.from(title, {
+    ...transform,
+    opacity: 0,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: title,
+      start: "top 80%",
+      end: "bottom 50%",
+      toggleActions: "play none none none",
+    },
+  });
+});
+
+const cards = Array.from(document.querySelectorAll(".cards"));
+console.log(cards);
+cards.forEach((card) => {
+  const images = Array.from(card.querySelectorAll(".image"));
+  images.forEach((image, i) => {
+    console.log(image);
+    gsap.from(image, {
+      y: 50,
+      opacity: 0,
+      duration: 0.25 + i * 0.1,
+      delay: i * 0.15,
+      scrollTrigger: {
+        trigger: image,
+        start: "top 80%",
+        end: "bottom 50%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
 });
